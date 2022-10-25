@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Poruka from 'fsd-vj03\src\components\Poruka.js'
 
 const poruke = [
   {
@@ -21,6 +22,8 @@ const poruke = [
     vazno: true
   }
 ]
+
+
 const App = (props) => {
   const { poruke } = props
 
@@ -28,9 +31,9 @@ const App = (props) => {
     <div>
       <h1>Poruke</h1>
       <ul>
-        <li>{poruke[0].sadrzaj}</li>
-        <li>{poruke[1].sadrzaj}</li>
-        <li>{poruke[2].sadrzaj}</li>
+        {
+        poruke.map( p => <Poruka key={p.id} poruka={p}/>)
+        }
       </ul>
     </div>
   )
